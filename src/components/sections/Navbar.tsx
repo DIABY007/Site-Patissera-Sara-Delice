@@ -81,23 +81,25 @@ export const Navbar = () => {
                 </Button>
               }
             />
-            <SheetContent side="right" className="bg-background border-l-border">
+            <SheetContent side="right" className="bg-background border-l-border p-0">
               <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
-              <div className="flex flex-col gap-6 mt-12">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-lg font-medium text-text-medium hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+              <div className="flex flex-col h-full px-8 py-12">
+                <div className="flex flex-col gap-8 mt-8">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="text-2xl font-medium text-text-medium hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
                 <Link 
-                  href="https://wa.me/224000000000"
+                  href="https://wa.me/22655305152"
                   className={cn(
                     buttonVariants({ variant: 'default' }),
-                    "rounded-full bg-primary hover:bg-berry text-white w-full py-6 mt-4"
+                    "rounded-full bg-primary hover:bg-berry text-white w-full py-7 mt-12 text-lg font-bold"
                   )}
                 >
                   Commander maintenant
