@@ -66,8 +66,8 @@ export const ProcessSection = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="flex flex-col items-center text-center group"
             >
-              <div className="relative mb-8">
-                <span className="font-display text-7xl md:text-8xl font-black italic text-white/10 absolute -top-12 left-1/2 -translate-x-1/2 pointer-events-none group-hover:text-white/15 transition-colors">
+              <div className="relative size-20 mb-8 flex items-center justify-center">
+                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-7xl md:text-8xl font-black italic text-white/10 pointer-events-none group-hover:text-white/15 transition-colors z-0">
                   {step.number}
                 </span>
                 <div className="size-20 rounded-full bg-white flex items-center justify-center shadow-2xl relative z-10">
