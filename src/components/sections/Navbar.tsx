@@ -46,7 +46,7 @@ export const Navbar = () => {
           href="/"
           className="font-display text-2xl font-bold italic text-primary"
         >
-          Sara Pâtisserie
+          Sara Délice
         </Link>
 
         {/* Desktop Links */}

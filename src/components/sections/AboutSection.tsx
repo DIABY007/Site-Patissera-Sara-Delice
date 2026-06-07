@@ -89,7 +89,7 @@ export const AboutSection = () => {
               className="mt-4"
             >
               <Badge variant="outline" className="rounded-full border-primary text-primary px-4 py-2 text-sm">
-                📍 Fait avec ❤️ à Conakry
+                📍 Fait avec ❤️ à Bobo Dioulasso
               </Badge>
             </motion.div>
           </div>

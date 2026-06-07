@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sara Pâtisserie — Douceurs Artisanales",
+  title: "Sara Délice — Douceurs Artisanales",
   description: "Landing page pour une pâtisserie artisanale home-based. Commandes en ligne, livraison à domicile.",
 };
 

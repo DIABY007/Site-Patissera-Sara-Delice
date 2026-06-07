@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Camera, MessageCircle, Phone, MapPin, Mail } from 'lucide-react';
+import { Camera, MessageCircle, Phone, MapPin } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 export const Footer = () => {
@@ -16,7 +16,7 @@ export const Footer = () => {
               href="/"
               className="font-display text-2xl font-bold italic text-white"
             >
-              Sara Pâtisserie
+              Sara Délice
             </Link>
             <p className="max-w-xs leading-relaxed">
               L'excellence de la pâtisserie artisanale livrée chez vous. Des ingrédients de qualité pour des moments d'exception.
@@ -29,7 +29,7 @@ export const Footer = () => {
                 <Camera className="size-5" />
               </Link>
               <Link
-                href="https://wa.me/224000000000"
+                href="https://wa.me/22655305152"
                 className="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white transition-all"
               >
                 <MessageCircle className="size-5" />
@@ -62,15 +62,11 @@ export const Footer = () => {
             <ul className="flex flex-col gap-4">
               <li className="flex items-center gap-3">
                 <Phone className="size-5 text-primary" />
-                <span>+224 000 00 00 00</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="size-5 text-primary" />
-                <span>contact@sarapatisserie.com</span>
+                <span>+226 55 30 51 52</span>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="size-5 text-primary" />
-                <span>Livraison partout à Conakry</span>
+                <span>Livraison partout à Bobo Dioulasso</span>
               </li>
             </ul>
           </div>
@@ -79,7 +75,7 @@ export const Footer = () => {
         <Separator className="bg-white/10 my-12" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
-          <p>© {new Date().getFullYear()} Sara Pâtisserie. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Sara Délice. Tous droits réservés.</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors">Mentions Légales</Link>
             <Link href="#" className="hover:text-white transition-colors">Politique de Confidentialité</Link>
