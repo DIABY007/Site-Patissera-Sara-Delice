@@ -1,0 +1,377 @@
+{
+  "project": {
+    "name": "Pâtisserie Maison — Landing Page",
+    "description": "Landing page pour une pâtisserie artisanale home-based. Commandes en ligne, livraison à domicile. Tons pastels chauds avec accents profonds. Ambiance douce, gourmande, féminine mais pas enfantine.",
+    "aesthetic": "Pastel-luxe organique — douceur pastel rose avec accents cramoisie/framboise profonds. Formes organiques ondulantes. Typographie serif élégante pour les titres, sans-serif arrondi pour le corps. Pas de géométrie froide. Tout respire le fait-main et l'authenticité."
+  },
+
+  "color": {
+    "palette": {
+      "background_primary": "#FDE8EF",
+      "background_secondary": "#FADADD",
+      "background_deep": "#C0395A",
+      "accent_crimson": "#A8284A",
+      "accent_berry": "#D4517A",
+      "accent_blush": "#F4A7BB",
+      "text_dark": "#2C1018",
+      "text_medium": "#6B2D3E",
+      "text_light": "#FFFFFF",
+      "text_muted": "#C47A8A",
+      "surface_card": "#FFF0F4",
+      "surface_overlay": "rgba(253, 232, 239, 0.85)"
+    },
+    "usage": {
+      "hero_bg": "background_primary avec texture grain subtile",
+      "section_alternate": "background_deep pour sections de contraste (process, CTA)",
+      "cards": "surface_card avec border 1px blush",
+      "cta_button": "accent_crimson fond, text_light texte",
+      "secondary_button": "transparent fond, accent_crimson border + texte",
+      "nav_bg": "surface_overlay backdrop-blur"
+    },
+    "principle": "Dominance du rose pastel chaud (#FDE8EF). Le cramoisie profond (#C0395A) est réservé aux sections de rupture et aux CTAs. Ne jamais utiliser les deux fonds côte à côte sans transition organique (wave/SVG)."
+  },
+
+  "typography": {
+    "fonts": {
+      "display": {
+        "family": "Playfair Display",
+        "fallback": "Georgia, serif",
+        "source": "Google Fonts",
+        "weight": ["400", "700", "900"],
+        "style": ["normal", "italic"],
+        "usage": "Titres de section H1, H2, noms de produits en vedette"
+      },
+      "body": {
+        "family": "DM Sans",
+        "fallback": "system-ui, sans-serif",
+        "source": "Google Fonts",
+        "weight": ["300", "400", "500"],
+        "usage": "Paragraphes, labels, étapes, témoignages"
+      },
+      "accent": {
+        "family": "Playfair Display",
+        "style": "italic",
+        "usage": "Sous-titres décoratifs, taglines, citations courtes"
+      }
+    },
+    "scale": {
+      "hero_title": { "size": "clamp(3rem, 7vw, 6rem)", "weight": "900", "line_height": "1.0", "font": "display" },
+      "hero_subtitle": { "size": "clamp(1rem, 2vw, 1.25rem)", "weight": "300", "line_height": "1.6", "font": "body" },
+      "section_title": { "size": "clamp(2rem, 4vw, 3.5rem)", "weight": "700", "line_height": "1.1", "font": "display" },
+      "product_name": { "size": "1.25rem", "weight": "700", "font": "display" },
+      "product_price": { "size": "1rem", "weight": "500", "color": "accent_crimson", "font": "body" },
+      "body_text": { "size": "1rem", "weight": "400", "line_height": "1.7", "font": "body" },
+      "caption": { "size": "0.875rem", "weight": "300", "color": "text_muted", "font": "body" },
+      "cta_label": { "size": "0.9rem", "weight": "500", "letter_spacing": "0.08em", "text_transform": "uppercase", "font": "body" },
+      "step_number": { "size": "3.5rem", "weight": "900", "color": "accent_blush", "font": "display", "style": "italic" }
+    }
+  },
+
+  "spacing": {
+    "grid": {
+      "max_width": "1280px",
+      "columns": 10,
+      "column_width": "110px",
+      "gutter": "20px",
+      "margin_horizontal": "auto"
+    },
+    "section_padding": {
+      "desktop": "120px 80px",
+      "tablet": "80px 40px",
+      "mobile": "60px 20px"
+    },
+    "component_gaps": {
+      "card_grid": "24px",
+      "step_items": "48px",
+      "nav_links": "32px",
+      "hero_stack": "24px"
+    },
+    "border_radius": {
+      "card": "20px",
+      "button": "100px",
+      "image_circle": "50%",
+      "image_rounded": "16px",
+      "wave_section": "organic SVG — pas de border-radius"
+    }
+  },
+
+  "shapes_and_layout": {
+    "section_dividers": {
+      "type": "SVG wave organique",
+      "description": "Transition entre sections via forme ondulante SVG. Jamais une ligne droite. La section deep (#C0395A) émerge du fond rose via une vague.",
+      "example_path": "M0,0 C360,80 720,-40 1440,0 L1440,120 L0,120 Z"
+    },
+    "product_images": {
+      "shape": "Cercle (border-radius: 50%) pour les produits vedettes, rectangles arrondis pour la grille",
+      "ratio_grid": "1:1",
+      "ratio_featured": "cercle 280px diameter",
+      "object_fit": "cover"
+    },
+    "hero_layout": {
+      "type": "Split asymétrique",
+      "left": "60% — texte + CTA",
+      "right": "40% — photo ronde ou composition de 2-3 photos",
+      "mobile": "Stack vertical, image en haut"
+    },
+    "decorative_elements": {
+      "background_illustrations": "Illustrations linéaires (fraises, fouet, étoiles) en rose légèrement plus soutenu que le fond — opacity 0.15-0.25. Positionnées aux coins.",
+      "floating_blobs": "Formes organiques SVG en background_secondary, opacity 0.4, position absolute pour profondeur",
+      "confetti_dots": "Petits cercles colorés dispersés, opacity 0.3"
+    }
+  },
+
+  "components": {
+    "navbar": {
+      "height": "72px",
+      "background": "surface_overlay + backdrop-filter: blur(12px)",
+      "border_bottom": "1px solid rgba(212, 81, 122, 0.15)",
+      "logo": { "font": "display", "size": "1.5rem", "weight": "700", "style": "italic", "color": "accent_crimson" },
+      "links": { "font": "body", "size": "0.9rem", "weight": "400", "color": "text_medium", "hover": "accent_crimson" },
+      "cta": "button_primary (petit, height 40px)",
+      "position": "sticky top-0 z-50",
+      "mobile": "hamburger menu, fullscreen overlay"
+    },
+
+    "button_primary": {
+      "background": "accent_crimson",
+      "color": "text_light",
+      "padding": "14px 32px",
+      "border_radius": "100px",
+      "font": "cta_label typography",
+      "hover": {
+        "background": "accent_berry",
+        "transform": "translateY(-2px)",
+        "box_shadow": "0 8px 24px rgba(168, 40, 74, 0.35)"
+      },
+      "transition": "all 0.25s ease"
+    },
+
+    "button_secondary": {
+      "background": "transparent",
+      "color": "accent_crimson",
+      "border": "1.5px solid accent_crimson",
+      "padding": "13px 30px",
+      "border_radius": "100px",
+      "font": "cta_label typography",
+      "hover": {
+        "background": "rgba(168, 40, 74, 0.06)"
+      }
+    },
+
+    "button_whatsapp": {
+      "background": "#25D366",
+      "color": "#FFFFFF",
+      "padding": "14px 32px",
+      "border_radius": "100px",
+      "icon": "WhatsApp SVG icon left-aligned",
+      "gap": "10px",
+      "font": "cta_label typography",
+      "hover": {
+        "background": "#1ebe57",
+        "transform": "translateY(-2px)"
+      }
+    },
+
+    "hero_section": {
+      "min_height": "100vh",
+      "background": "background_primary",
+      "layout": "grid 10-col, texte sur col 1-6, image col 7-10",
+      "title": "hero_title — line 1 normal, line 2 italic accent couleur accent_crimson",
+      "subtitle": "hero_subtitle — max 2 lignes",
+      "cta_group": "button_whatsapp + button_secondary côte à côte, gap 16px",
+      "badge": "Petit badge organique: '100% Fait Maison' — fond accent_blush, texte text_dark, font body 0.8rem",
+      "image_composition": "Photo principale cercle 380px + petite photo cercle 160px décalée en bas-droite",
+      "decorative": "Illustrations linéaires coins, floating blob background_secondary"
+    },
+
+    "product_card": {
+      "background": "surface_card",
+      "border": "1px solid rgba(244, 167, 187, 0.4)",
+      "border_radius": "20px",
+      "padding": "20px",
+      "image": {
+        "shape": "rectangle arrondi 16px",
+        "ratio": "1:1",
+        "width": "100%",
+        "height": "200px",
+        "object_fit": "cover",
+        "hover": "scale(1.04) — transition 0.3s ease"
+      },
+      "name": "product_name typography, margin-top 16px",
+      "description": "caption typography, 2 lignes max, margin-top 6px",
+      "price": "product_price typography, margin-top 8px",
+      "hover_card": "translateY(-4px) + box-shadow: 0 12px 32px rgba(168, 40, 74, 0.12)",
+      "grid": "3 colonnes desktop, 2 tablette, 1 mobile"
+    },
+
+    "product_section": {
+      "background": "background_primary",
+      "title": "section_title centré",
+      "subtitle": "accent italic centré, opacity 0.7, margin-bottom 64px",
+      "filter_tabs": {
+        "items": ["Tout", "Crêpes", "Pancakes", "Naan", "Gâteaux"],
+        "style": "pills arrondis, inactif: fond blush/transparent, actif: fond accent_crimson texte blanc",
+        "font": "body 0.875rem weight 500",
+        "margin_bottom": "48px"
+      }
+    },
+
+    "process_section": {
+      "background": "background_deep",
+      "color": "text_light",
+      "title": "section_title, couleur text_light",
+      "subtitle": "italic, couleur rgba(255,255,255,0.7)",
+      "layout": "3 steps horizontaux desktop, vertical mobile",
+      "step_item": {
+        "number": "step_number typography — grand chiffre decoratif",
+        "icon": "SVG icon 48px, couleur accent_blush",
+        "title": "1.1rem weight 600, text_light",
+        "description": "body_text, rgba(255,255,255,0.8)",
+        "connector": "ligne pointillée entre étapes desktop, cachée mobile"
+      },
+      "steps": ["Tu commandes via WhatsApp", "Elle prépare avec ❤️", "Tu reçois à domicile"]
+    },
+
+    "about_section": {
+      "background": "background_secondary",
+      "layout": "2 colonnes: image gauche, texte droite — 45/55",
+      "image": {
+        "shape": "rectangle arrondi 20px légèrement incliné -2deg",
+        "size": "420px x 520px",
+        "decoration": "blob organique accent_blush derrière l'image"
+      },
+      "badge": "Petit tag 'Fait avec ❤️ à [ville]'",
+      "text": {
+        "eyebrow": "caption uppercase letter-spacing 0.12em accent_crimson",
+        "title": "section_title",
+        "body": "body_text max 80 mots — insister sur fait-maison, passion, ingrédients frais",
+        "highlight": "1 phrase clé en display italic accent_crimson plus grande"
+      }
+    },
+
+    "testimonial_section": {
+      "background": "background_primary",
+      "layout": "grid 3 colonnes desktop, scroll horizontal mobile",
+      "card": {
+        "background": "surface_card",
+        "border": "1px solid rgba(244, 167, 187, 0.4)",
+        "border_radius": "20px",
+        "padding": "28px 24px",
+        "quote_mark": "Playfair Display 5rem italic accent_blush opacity 0.4, position absolute top-left",
+        "text": "body_text font-style italic",
+        "author": "caption weight 500 text_medium, margin-top 16px",
+        "stars": "5 étoiles ★ accent_crimson, margin-bottom 12px"
+      }
+    },
+
+    "cta_section": {
+      "background": "accent_crimson",
+      "layout": "centré, max-width 640px",
+      "title": "section_title text_light",
+      "subtitle": "body_text rgba(255,255,255,0.85)",
+      "button": "button_secondary (version blanche: border white, texte white)",
+      "decoration": "pattern points blancs opacity 0.05 en background"
+    },
+
+    "footer": {
+      "background": "text_dark (#2C1018)",
+      "color": "rgba(255,255,255,0.6)",
+      "layout": "3 colonnes: logo+desc / liens / contact",
+      "logo": "display italic text_light",
+      "link_hover": "text_light",
+      "social_icons": "Instagram, WhatsApp — cercles 36px fond rgba(255,255,255,0.08)",
+      "bottom_bar": "1px solid rgba(255,255,255,0.08), copyright centré",
+      "font": "body 0.875rem"
+    }
+  },
+
+  "motion": {
+    "philosophy": "Subtil et organique. Rien de brutal ni de flashy. Les animations doivent évoquer la douceur du fait-main.",
+    "page_load": {
+      "hero_title": "fade-up 0.8s ease, delay 0.1s",
+      "hero_subtitle": "fade-up 0.8s ease, delay 0.3s",
+      "hero_cta": "fade-up 0.8s ease, delay 0.5s",
+      "hero_image": "fade-in + scale from 0.95, delay 0.2s"
+    },
+    "scroll_reveal": {
+      "cards": "stagger fade-up, delay 0.1s entre chaque",
+      "section_titles": "fade-up 0.6s",
+      "process_steps": "stagger fade-in de gauche à droite"
+    },
+    "hover": {
+      "product_card": "translateY(-4px) 0.25s ease",
+      "button": "translateY(-2px) + shadow 0.25s ease",
+      "product_image": "scale(1.04) 0.3s ease",
+      "nav_link": "color transition 0.2s"
+    },
+    "durations": {
+      "micro": "150ms",
+      "short": "250ms",
+      "medium": "400ms",
+      "long": "600ms",
+      "page": "800ms"
+    },
+    "easing": {
+      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "bounce": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "smooth": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+    }
+  },
+
+  "imagery": {
+    "style": "Photos chaudes, lumière naturelle, fond clair ou bois. Pas de photos sombres ni industrielles.",
+    "product_treatment": "Légère saturation +10%, température chaude. Pas de filtres dramatiques.",
+    "composition": "Overhead (vue du dessus) pour les gâteaux, 3/4 pour les pièces montées",
+    "shapes_used": ["Cercle (featured products)", "Rectangle 1:1 (grid)", "Rectangle 3:4 (about portrait)"],
+    "no_gradient_on_images": true,
+    "overlay": "Jamais d'overlay coloré sur les photos produit — laisser les couleurs naturelles dominer"
+  },
+
+  "responsive": {
+    "breakpoints": {
+      "mobile": "< 768px",
+      "tablet": "768px - 1024px",
+      "desktop": "> 1024px",
+      "wide": "> 1440px"
+    },
+    "mobile_rules": {
+      "hero": "Stack vertical, image en premier, texte en dessous",
+      "product_grid": "1 colonne scroll, ou 2 colonnes compact",
+      "process": "Stack vertical avec numéros à gauche",
+      "about": "Stack vertical, image en premier",
+      "nav": "Hamburger, overlay fullscreen fond background_primary",
+      "cta_group": "Stack vertical, full-width buttons"
+    }
+  },
+
+  "design_principles": [
+    "Organic over geometric — toujours préférer les formes douces aux angles durs",
+    "Warmth first — chaque décision doit renforcer la chaleur et l'authenticité artisanale",
+    "Photos do the selling — le texte complète, les photos convainquent",
+    "One action per section — chaque section a un seul objectif et un seul CTA",
+    "Crimson is precious — n'utiliser accent_crimson que pour ce qui est vraiment important",
+    "No stock photo vibes — les vraies photos de la cousine > toute illustration générique",
+    "Mobile is primary — 80% du trafic sera mobile, designer pour mobile d'abord"
+  ],
+
+  "anti_patterns": [
+    "Pas de gradient sur les images produit",
+    "Pas de fond blanc pur (#FFFFFF) — toujours utiliser les teintes rosées",
+    "Pas de polices système (Arial, Roboto, Inter)",
+    "Pas de layout 100% symétrique et rigide",
+    "Pas de sections avec texte dense de plus de 4 lignes",
+    "Pas de formulaire complexe — WhatsApp est le canal de commande",
+    "Pas plus de 2 CTAs par section"
+  ],
+
+  "section_order": [
+    { "id": "navbar", "label": "Navigation sticky" },
+    { "id": "hero", "label": "Hero — Photo + Accroche + CTA WhatsApp" },
+    { "id": "products", "label": "Nos Créations — Grid produits filtrables" },
+    { "id": "process", "label": "Comment ça marche — 3 étapes" },
+    { "id": "about", "label": "À propos — Portrait + histoire courte" },
+    { "id": "testimonials", "label": "Avis clients — 3 témoignages" },
+    { "id": "cta", "label": "Commander maintenant — Section finale" },
+    { "id": "footer", "label": "Footer — Liens + Contact" }
+  ]
+}
