@@ -67,7 +67,7 @@ export const ProcessSection = () => {
               className="flex flex-col items-center text-center group"
             >
               <div className="relative size-20 mb-8 flex items-center justify-center">
-                <span className="absolute -top-5 -right-4 font-display text-[5rem] font-black italic text-white/15 pointer-events-none group-hover:text-white/25 transition-colors z-0">
+                <span className="absolute -top-5 -right-4 font-display text-[5rem] font-black italic text-white/15 pointer-events-none group-hover:text-white/25 transition-colors z-20">
                   {step.number}
                 </span>
                 <div className="size-20 rounded-full bg-white flex items-center justify-center shadow-2xl relative z-10">
