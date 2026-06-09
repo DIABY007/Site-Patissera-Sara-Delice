@@ -2,27 +2,20 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageSquare, Heart, Truck } from 'lucide-react';
 import { SectionWave } from '@/components/ui/section-wave';
 
 const steps = [
   {
-    number: '01',
     title: 'Tu commandes',
     description: 'Sélectionne tes douceurs et envoie ta commande directement via WhatsApp.',
-    icon: MessageSquare,
   },
   {
-    number: '02',
     title: 'Elle prépare',
     description: 'Chaque pâtisserie est confectionnée avec soin, passion et des ingrédients frais.',
-    icon: Heart,
   },
   {
-    number: '03',
     title: 'Tu reçois',
     description: 'Tes gourmandises sont livrées directement à ton domicile, prêtes à être dégustées.',
-    icon: Truck,
   },
 ];
 
@@ -60,48 +53,31 @@ export const ProcessSection = () => {
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center px-4">
               
-              {/* Wrapper cercle + chiffre */}
-              <div style={{ position: 'relative', width: '80px', height: '80px' }}>
-                
-                {/* Chiffre décoratif — centré derrière le cercle */}
+              {/* Cercle blanc avec numéro */}
+              <div
+                style={{
+                  width: '80px',
+                  height: '80px',
+                  borderRadius: '50%',
+                  backgroundColor: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 1,
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                }}
+              >
                 <span
                   style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    fontSize: '7rem',
-                    fontFamily: '"Playfair Display", serif',
-                    fontStyle: 'italic',
-                    fontWeight: 900,
-                    color: 'rgba(255, 255, 255, 0.12)',
+                    fontSize: '2.5rem',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 'bold',
+                    color: '#A8284A',
                     lineHeight: 1,
-                    userSelect: 'none',
-                    pointerEvents: 'none',
-                    zIndex: 0,
-                    whiteSpace: 'nowrap',
                   }}
                 >
-                  {String(index + 1).padStart(2, '0')}
+                  {index + 1}
                 </span>
-
-                {/* Cercle icône — par-dessus le chiffre */}
-                <div
-                  style={{
-                    position: 'relative',
-                    zIndex: 1,
-                    width: '80px',
-                    height: '80px',
-                    borderRadius: '50%',
-                    backgroundColor: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <step.icon style={{ width: '32px', height: '32px', color: '#A8284A' }} />
-                </div>
-
               </div>
 
               {/* Texte du step */}
