@@ -32,29 +32,18 @@ export const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
           
           {/* Right Image Composition (Desktop) / Top Image (Mobile) */}
-          <div className="lg:col-span-4 order-first lg:order-last relative flex justify-center lg:justify-end mb-8 lg:mb-0">
+          <div className="lg:col-span-4 order-first lg:order-last relative flex justify-center lg:justify-end mb-12 lg:mb-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative w-full max-w-full lg:max-w-[400px]"
+              className="relative w-full max-w-[400px]"
             >
-              {/* Mobile Image Style */}
-              <div className="lg:hidden relative w-full h-[280px] rounded-[16px] overflow-hidden shadow-2xl mb-8">
+              {/* Image Container with 3:4 Aspect Ratio */}
+              <div className="relative w-full aspect-[3/4] rounded-[24px] overflow-hidden shadow-2xl border-4 border-white/50">
                 <Image
-                  src="/images/Gateau d'aniversaire 2.jpg"
-                  alt="Notre meilleure création"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* Desktop Image Style (Circle) */}
-              <div className="hidden lg:block relative w-[380px] h-[380px] rounded-full border-8 border-white/50 shadow-2xl overflow-hidden z-20">
-                <Image
-                  src="/images/Gateau d'aniversaire 2.jpg"
-                  alt="Notre meilleure création"
+                  src="/images/hero.jpg"
+                  alt="Sara Délice - Notre spécialité"
                   fill
                   className="object-cover"
                   priority
