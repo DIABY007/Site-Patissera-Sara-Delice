@@ -44,7 +44,7 @@ export const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Link 
-              href="https://wa.me/224000000000"
+              href="https://wa.me/22655305152"
               className={cn(
                 buttonVariants({ variant: 'default' }),
                 "rounded-full bg-white text-primary hover:bg-white/90 px-10 py-8 text-lg font-bold shadow-xl transition-all hover:scale-105"

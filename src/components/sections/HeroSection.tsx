@@ -30,6 +30,42 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-4 py-12 md:py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
+          
+          {/* Right Image Composition (Desktop) / Top Image (Mobile) */}
+          <div className="lg:col-span-4 order-first lg:order-last relative flex justify-center lg:justify-end mb-8 lg:mb-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative w-full max-w-full lg:max-w-[400px]"
+            >
+              {/* Mobile Image Style */}
+              <div className="lg:hidden relative w-full h-[280px] rounded-[16px] overflow-hidden shadow-2xl mb-8">
+                <Image
+                  src="/images/Gateau d'aniversaire 2.jpg"
+                  alt="Notre meilleure création"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              {/* Desktop Image Style (Circle) */}
+              <div className="hidden lg:block relative w-[380px] h-[380px] rounded-full border-8 border-white/50 shadow-2xl overflow-hidden z-20">
+                <Image
+                  src="/images/Gateau d'aniversaire 2.jpg"
+                  alt="Notre meilleure création"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              
+              {/* Decorative Blobs */}
+              <div className="absolute -top-10 -left-10 w-full h-full bg-secondary/30 rounded-full blur-2xl -z-10" />
+            </motion.div>
+          </div>
+
           {/* Left Content */}
           <div className="lg:col-span-6 flex flex-col items-start gap-6">
             <motion.div
@@ -68,10 +104,10 @@ export const HeroSection = () => {
               className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full sm:w-auto"
             >
               <Link 
-                href="https://wa.me/224000000000"
+                href="https://wa.me/22655305152"
                 className={cn(
                   buttonVariants({ variant: 'default' }),
-                  "rounded-full bg-[#25D366] hover:bg-[#1ebe57] text-white px-8 py-7 text-base font-medium transition-transform hover:-translate-y-1 w-full sm:w-auto shadow-lg shadow-[#25D366]/20"
+                  "rounded-full bg-[#A8284A] hover:bg-[#8e1f3d] text-white px-8 py-7 text-base font-medium transition-transform hover:-translate-y-1 w-full sm:w-auto shadow-lg shadow-[#A8284A]/20"
                 )}
               >
                 <WhatsAppIcon />
@@ -86,45 +122,6 @@ export const HeroSection = () => {
               >
                 Voir nos créations
               </Link>
-            </motion.div>
-          </div>
-
-          {/* Right Image Composition */}
-          <div className="lg:col-span-4 relative flex justify-center lg:justify-end">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative w-full max-w-[400px] aspect-square"
-            >
-              {/* Main Image */}
-              <div className="absolute inset-0 rounded-full border-8 border-white/50 shadow-2xl overflow-hidden z-20">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="Notre meilleure création"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              
-              {/* Secondary Image */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20, y: 20 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="absolute -bottom-6 -right-6 w-40 h-40 rounded-full border-4 border-white shadow-xl overflow-hidden z-30"
-              >
-                <Image
-                  src="/images/Crepe au chocolat et confetis.jpg"
-                  alt="Petite douceur"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-
-              {/* Decorative Blobs */}
-              <div className="absolute -top-10 -left-10 w-full h-full bg-secondary/30 rounded-full blur-2xl -z-10" />
             </motion.div>
           </div>
         </div>

@@ -26,7 +26,7 @@ const products = [
     category: 'Pancakes',
     price: '20.000 FG',
     image: '/images/Pancake au chocolat.jpg',
-    description: 'Pancakes moelleux servis avec une onctueuse sauce au chocolat.',
+    description: 'Pancakes moelleux servis with une onctueuse sauce au chocolat.',
   },
   {
     id: 3,
@@ -58,7 +58,7 @@ const products = [
     category: 'Tout',
     price: '12.000 FG',
     image: '/images/Croissant au Chocolat.jpg',
-    description: 'Viennoiserie pur beurre avec des barres de chocolat noir intense.',
+    description: 'Viennoiserie pur beurre with des barres de chocolat noir intense.',
   },
   {
     id: 7,
@@ -82,7 +82,7 @@ const products = [
     category: 'Gâteaux',
     price: '20.000 FG',
     image: '/images/Gateau fris.jpg',
-    description: 'Spécialité locale revisitée avec une touche de modernité.',
+    description: 'Spécialité locale revisitée with une touche de modernité.',
   },
 ];
 
@@ -153,17 +153,17 @@ export const ProductsSection = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
               >
-                <Card className="group overflow-hidden border-blush/40 bg-surface-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <Card className="group overflow-hidden border-blush/40 bg-surface-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-[20px]">
+                  <div className="relative w-full h-[240px] overflow-hidden rounded-t-[12px]">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
                   <CardContent className="p-5">
-                    <div className="relative aspect-square overflow-hidden rounded-2xl">
-                      <Image
-                        src={product.image}
-                        alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="mt-6">
+                    <div className="mt-2">
                       <div className="flex justify-between items-start gap-4">
                         <h3 className="font-display text-xl font-bold text-text-dark">
                           {product.name}
@@ -176,10 +176,10 @@ export const ProductsSection = () => {
                         {product.description}
                       </p>
                       <Link
-                        href={`https://wa.me/224000000000?text=Je souhaiterais commander : ${product.name}`}
+                        href={`https://wa.me/22655305152?text=Je souhaiterais commander : ${product.name}`}
                         className={cn(
                           buttonVariants({ variant: 'ghost' }),
-                          "w-full mt-6 rounded-full border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all group-hover:border-primary"
+                          "w-full mt-6 rounded-full border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all group-hover:border-primary font-bold"
                         )}
                       >
                         Commander
