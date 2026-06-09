@@ -42,7 +42,7 @@ export const HeroSection = () => {
               {/* Image Container with 3:4 Aspect Ratio */}
               <div className="relative w-full aspect-[3/4] rounded-[24px] overflow-hidden shadow-2xl border-4 border-white/50">
                 <Image
-                  src="/images/hero.jpg"
+                  src="/images/hero.png"
                   alt="Sara Délice - Notre spécialité"
                   fill
                   className="object-cover"
