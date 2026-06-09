@@ -58,44 +58,59 @@ export const ProcessSection = () => {
           <div className="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-px border-t-2 border-dashed border-white/20 -translate-y-1/2 -z-10" />
 
           {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="flex flex-col items-center text-center group"
-            >
-              <div className="relative flex items-center justify-center mb-8">
+            <div key={index} className="flex flex-col items-center text-center px-4">
+              
+              {/* Wrapper cercle + chiffre */}
+              <div style={{ position: 'relative', width: '80px', height: '80px' }}>
+                
+                {/* Chiffre décoratif — centré derrière le cercle */}
                 <span
                   style={{
                     position: 'absolute',
-                    fontSize: '7rem',
-                    fontFamily: 'Playfair Display, serif',
-                    fontStyle: 'italic',
-                    color: 'rgba(255,255,255,0.12)',
-                    lineHeight: 1,
-                    userSelect: 'none',
-                    zIndex: 0,
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
+                    fontSize: '7rem',
+                    fontFamily: '"Playfair Display", serif',
+                    fontStyle: 'italic',
+                    fontWeight: 900,
+                    color: 'rgba(255, 255, 255, 0.12)',
+                    lineHeight: 1,
+                    userSelect: 'none',
+                    pointerEvents: 'none',
+                    zIndex: 0,
+                    whiteSpace: 'nowrap',
                   }}
                 >
-                  {step.number}
+                  {String(index + 1).padStart(2, '0')}
                 </span>
+
+                {/* Cercle icône — par-dessus le chiffre */}
                 <div
-                  style={{ position: 'relative', zIndex: 1 }}
-                  className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-2xl"
+                  style={{
+                    position: 'relative',
+                    zIndex: 1,
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    backgroundColor: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
                 >
-                  <step.icon className="size-8 text-primary" />
+                  <step.icon style={{ width: '32px', height: '32px', color: '#A8284A' }} />
                 </div>
+
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
-              <p className="text-white/80 max-w-[280px] leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
+
+              {/* Texte du step */}
+              <h3 style={{ marginTop: '24px', marginBottom: '12px', color: '#ffffff', fontWeight: 'bold', fontSize: '1.25rem' }}>
+                {step.title}
+              </h3>
+              <p style={{ color: 'rgba(255, 255, 255, 0.8)', maxWidth: '280px', lineHeight: '1.6' }}>{step.description}</p>
+
+            </div>
           ))}
         </div>
       </div>

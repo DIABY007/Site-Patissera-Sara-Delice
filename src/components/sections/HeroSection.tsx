@@ -56,7 +56,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Left Content */}
-          <div className="lg:col-span-6 flex flex-col items-start gap-6">
+          <div className="lg:col-span-6 flex flex-col items-start gap-6 mt-4 lg:mt-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
